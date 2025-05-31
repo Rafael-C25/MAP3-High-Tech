@@ -798,8 +798,7 @@ Aplicações comuns:
                       </div>
                       <div>
                         <h4 className="text-lg font-medium mb-1">E-mail</h4>
-                        <p className="text-gray-400">contato@map3.com.br</p>
-                        <p className="text-gray-400">comercial@map3.com.br</p>
+                        <p className="text-gray-400">contatoMap3HighTech@gmail.com</p>
                       </div>
                     </div>
                     
@@ -896,7 +895,7 @@ Aplicações comuns:
                 </li>
                 <li className="flex items-center">
                   <Mail className="h-5 w-5 text-blue-500 mr-2" />
-                  <span className="text-gray-400">contato@map3.com.br</span>
+                  <span className="text-gray-400">contatoMap3HighTech@gmail.com</span>
                 </li>
                 <li className="flex items-center">
                   <Clock className="h-5 w-5 text-blue-500 mr-2" />
