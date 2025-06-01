@@ -1,14 +1,16 @@
 import React from 'react';
 import { ArrowRight, ChevronDown, Menu, X, Phone, Mail, MapPin, Linkedin, Instagram, Youtube, Clock, Shield, Zap, Wrench, Cog, PenTool, Settings, Factory, PenTool as Tool, Hammer } from 'lucide-react';
 import './App.css';
-import doosanImage from './assets/portfolio/doosan-lynx.jpg';
-import retrofit1 from './assets/portfolio/retrofit1.jpg';
-import retrofit2 from './assets/portfolio/retrofit2.jpg';
-import retrofit3 from './assets/portfolio/retrofit3.jpg';
-import retrofit4 from './assets/portfolio/retrofit4.jpg';
-import retrofit5 from './assets/portfolio/retrofit5.jpg';
-import modelo3d from './assets/portfolio/modelo3d.jpg';
-import recuperacao from './assets/portfolio/recuperacao.jpg';
+
+// Comentando temporariamente as importações de imagens
+// import doosanImage from './assets/portfolio/doosan-lynx.jpg';
+// import retrofit1 from './assets/portfolio/retrofit1.jpg';
+// import retrofit2 from './assets/portfolio/retrofit2.jpg';
+// import retrofit3 from './assets/portfolio/retrofit3.jpg';
+// import retrofit4 from './assets/portfolio/retrofit4.jpg';
+// import retrofit5 from './assets/portfolio/retrofit5.jpg';
+// import modelo3d from './assets/portfolio/modelo3d.jpg';
+// import recuperacao from './assets/portfolio/recuperacao.jpg';
 
 const Modal = ({ isOpen, onClose, title, content, images }) => {
   const [selectedImageIndex, setSelectedImageIndex] = React.useState(null);
@@ -170,7 +172,7 @@ function App() {
       id: 1,
       title: 'Reforma e Retrofiting de Máquinas CNC',
       description: 'Modernização completa de máquinas CNC, incluindo atualização de comandos, drives, motores e componentes mecânicos para maior precisão e produtividade.',
-      image: doosanImage,
+      image: 'https://via.placeholder.com/800x600',
       category: 'retrofiting',
       detailedContent: `Projeto de Modernização de Máquinas CNC
 
@@ -185,18 +187,18 @@ Nossa equipe realiza a reforma e retrofiting completo de máquinas CNC, implemen
 
 O resultado são máquinas completamente renovadas, com maior precisão, confiabilidade e recursos tecnológicos atualizados.`,
       galleryImages: [
-        retrofit1,
-        retrofit2,
-        retrofit3,
-        retrofit4,
-        retrofit5
+        'https://via.placeholder.com/800x600',
+        'https://via.placeholder.com/800x600',
+        'https://via.placeholder.com/800x600',
+        'https://via.placeholder.com/800x600',
+        'https://via.placeholder.com/800x600'
       ]
     },
     {
       id: 2,
       title: 'Recuperação de Componentes Mecânicos',
       description: 'Serviço especializado em recuperação de fusos de esferas, guias lineares e patins, restaurando precisão e funcionalidade original.',
-      image: recuperacao,
+      image: 'https://via.placeholder.com/800x600',
       category: 'recuperacao',
       detailedContent: `Recuperação Especializada de Componentes Mecânicos
 
@@ -211,14 +213,14 @@ Nossa equipe realiza a recuperação de diversos componentes mecânicos de preci
 
 Utilizamos técnicas avançadas de recuperação e equipamentos de alta precisão para garantir que os componentes retornem às suas especificações originais de funcionamento.`,
       galleryImages: [
-        recuperacao
+        'https://via.placeholder.com/800x600'
       ]
     },
     {
       id: 3,
       title: 'Modelagem 3D',
       description: 'Projeto 3D e detalhamento técnico para fabricação de componentes industriais.',
-      image: modelo3d,
+      image: 'https://via.placeholder.com/800x600',
       category: 'projetos3d',
       detailedContent: `Desenvolvimento de Projetos 3D Industriais
 
@@ -233,7 +235,7 @@ Características do Projeto:
 
 O modelo 3D permite visualizar todos os detalhes do conjunto antes da fabricação, garantindo precisão e qualidade no resultado final.`,
       galleryImages: [
-        modelo3d
+        'https://via.placeholder.com/800x600'
       ]
     }
   ];
