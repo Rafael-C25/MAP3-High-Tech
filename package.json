@@ -1,6 +1,5 @@
 {
   "name": "map3-high-tech",
-  "homepage": "https://rafael-c25.github.io/MAP3-High-Tech",
   "version": "1.0.0",
   "scripts": {
     "predeploy": "npm run build",
