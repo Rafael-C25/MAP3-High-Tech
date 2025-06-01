@@ -1,5 +1,5 @@
 {
-  "name": "map3-high-tech",
+  "name": "map3-high-tech", 
   "version": "1.0.0",
   "scripts": {
     "predeploy": "npm run build",

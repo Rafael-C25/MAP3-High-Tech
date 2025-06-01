@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, ChevronDown, Menu, X, Phone, Mail, MapPin, Linkedin, Instagram, Youtube, Clock, Shield, Zap, Wrench, Cog, PenTool, Settings, Factory, PenTool as Tool, Hammer } from 'lucide-react';
 import './App.css';
+import { getServiceContent } from './services.js';
 
 // Comentando temporariamente as importações de imagens
 // import doosanImage from './assets/portfolio/doosan-lynx.jpg';
@@ -266,109 +267,6 @@ O modelo 3D permite visualizar todos os detalhes do conjunto antes da fabricaç�
     alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
     const form = e.target;
     form.reset();
-  };
-
-  const getServiceContent = (service) => {
-    switch (service) {
-      case 'Manutenção Centrada em Confiabilidade':
-        return `Soluções avançadas para maximizar a disponibilidade dos seus equipamentos
-
-Na MAP3 – High Tech Mechanics, aplicamos metodologias modernas de manutenção para garantir a máxima confiabilidade dos seus equipamentos industriais. Nossa abordagem sistemática visa reduzir paradas não programadas e otimizar o desempenho operacional.
-
-🔧 Do diagnóstico à implementação
-
-Nossa equipe técnica desenvolve e implementa programas completos de manutenção:
-
-1. Análise de criticidade dos equipamentos
-2. Desenvolvimento de planos de manutenção preventiva
-3. Implementação de técnicas preditivas
-4. Monitoramento de condições em tempo real
-5. Gestão informatizada da manutenção
-6. Treinamento das equipes de manutenção`;
-
-      case 'Geometria de Máquinas':
-        return `Precisão e alinhamento para máximo desempenho
-
-Na MAP3 – High Tech Mechanics, realizamos análises geométricas completas em máquinas industriais, garantindo precisão e qualidade em seus processos produtivos. Utilizamos equipamentos de última geração para medições e ajustes.
-
-📏 Serviços especializados
-
-Nossa equipe realiza:
-
-1. Medição de geometria com equipamentos laser
-2. Análise de perpendicularidade e paralelismo
-3. Verificação de planicidade e retilineidade
-4. Alinhamento de eixos e guias
-5. Correção de desvios geométricos
-6. Documentação técnica das medições`;
-
-      case 'Reforma e Retrofiting de Máquinas CNC':
-        return `Modernização completa para maior produtividade
-
-Na MAP3 – High Tech Mechanics, transformamos máquinas CNC antigas em equipamentos modernos e eficientes. Nossa expertise em retrofiting garante uma renovação completa, desde o comando até os componentes mecânicos.
-
-🔄 Processo de modernização
-
-Etapas do retrofiting:
-
-1. Avaliação técnica do equipamento
-2. Substituição do comando CNC
-3. Modernização de drives e motores
-4. Recuperação de guias e fusos
-5. Atualização do painel elétrico
-6. Implementação de recursos Indústria 4.0`;
-
-      case 'Recuperação de Componentes':
-        return `Restauração técnica com precisão industrial
-
-Na MAP3 – High Tech Mechanics, oferecemos serviços especializados de recuperação de componentes mecânicos, devolvendo suas características originais de funcionamento e prolongando sua vida útil.
-
-🛠️ Especialidades técnicas
-
-Recuperação especializada de:
-
-1. Fusos de esferas e castanhas
-2. Guias lineares e patins
-3. Eixos e acoplamentos
-4. Mancais e rolamentos
-5. Sistemas hidráulicos
-6. Componentes de precisão`;
-
-      case 'Desenho 3D e Detalhamento':
-        return `Projetos técnicos com alta precisão
-
-Na MAP3 – High Tech Mechanics, desenvolvemos projetos 3D completos e documentação técnica detalhada para fabricação de componentes e conjuntos mecânicos, utilizando as mais modernas ferramentas de CAD.
-
-💻 Desenvolvimento técnico
-
-Nossos serviços incluem:
-
-1. Modelagem 3D em SolidWorks/Inventor
-2. Desenhos técnicos detalhados
-3. Análise de interferências
-4. Simulações de movimento
-5. Documentação para fabricação
-6. Lista de materiais e especificações`;
-
-      case 'Montagem Industrial':
-        return `Execução técnica com excelência
-
-Na MAP3 – High Tech Mechanics, realizamos montagens industriais com alto padrão técnico, seguindo rigorosos procedimentos de qualidade e segurança, garantindo a máxima eficiência operacional.
-
-🏭 Serviços especializados
-
-Nossa atuação abrange:
-
-1. Montagem de máquinas e equipamentos
-2. Instalação de linhas de produção
-3. Alinhamento de precisão
-4. Instalações elétricas industriais
-5. Start-up e comissionamento
-6. Documentação técnica completa`;
-
-      default:
-        return `Mais informações sobre ${service} em breve.`;
-    }
   };
 
   return (
