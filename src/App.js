@@ -10,16 +10,8 @@ import retrofit5 from './assets/portfolio/retrofit5.jpg';
 import modelo3d from './assets/portfolio/modelo3d.jpg';
 import recuperacao from './assets/portfolio/recuperacao.jpg';
 
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title: string;
-  content: string;
-  images?: string[];
-}
-
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, content, images }) => {
-  const [selectedImageIndex, setSelectedImageIndex] = React.useState<number | null>(null);
+const Modal = ({ isOpen, onClose, title, content, images }) => {
+  const [selectedImageIndex, setSelectedImageIndex] = React.useState(null);
 
   const handlePrevImage = () => {
     if (selectedImageIndex !== null && images) {
@@ -33,7 +25,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, content, images }
     }
   };
 
-  const handleKeyDown = (e: KeyboardEvent) => {
+  const handleKeyDown = (e) => {
     if (selectedImageIndex !== null) {
       if (e.key === 'ArrowLeft') handlePrevImage();
       if (e.key === 'ArrowRight') handleNextImage();
@@ -138,19 +130,20 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, content, images }
 function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState('home');
-  const [selectedService, setSelectedService] = React.useState<string | null>(null);
+  const [selectedService, setSelectedService] = React.useState(null);
   const [showContactForm, setShowContactForm] = React.useState(false);
-  const [modalInfo, setModalInfo] = React.useState<{ isOpen: boolean; title: string; content: string; images?: string[] }>({
+  const [modalInfo, setModalInfo] = React.useState({
     isOpen: false,
     title: '',
-    content: ''
+    content: '',
+    images: []
   });
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
@@ -159,7 +152,7 @@ function App() {
     }
   };
 
-  const handleServiceClick = (service: string) => {
+  const handleServiceClick = (service) => {
     setModalInfo({
       isOpen: true,
       title: service,
@@ -265,67 +258,111 @@ O modelo 3D permite visualizar todos os detalhes do conjunto antes da fabricaç�
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // Implement your form submission logic here
     alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-    const form = e.target as HTMLFormElement;
+    const form = e.target;
     form.reset();
   };
 
-  const getServiceContent = (service: string) => {
+  const getServiceContent = (service) => {
     switch (service) {
-      case 'Projetos de Máquinas Especiais':
-        return `Soluções personalizadas para desafios únicos da sua produção
+      case 'Manutenção Centrada em Confiabilidade':
+        return `Soluções avançadas para maximizar a disponibilidade dos seus equipamentos
 
-Na MAP3 – High Tech Mechanics, desenvolvemos máquinas especiais sob medida para atender às demandas específicas de cada processo produtivo. Nossos projetos unem engenharia de precisão, inovação tecnológica e conhecimento de chão de fábrica, oferecendo equipamentos personalizados que aumentam a produtividade, reduzem custos e garantem maior controle operacional.
+Na MAP3 – High Tech Mechanics, aplicamos metodologias modernas de manutenção para garantir a máxima confiabilidade dos seus equipamentos industriais. Nossa abordagem sistemática visa reduzir paradas não programadas e otimizar o desempenho operacional.
 
-🚀 Do conceito à implementação
+🔧 Do diagnóstico à implementação
 
-Nosso time técnico realiza todo o ciclo de desenvolvimento da máquina, desde a análise da necessidade, passando pelo projeto mecânico, elétrico e de automação, até a montagem, testes e entrega final.
+Nossa equipe técnica desenvolve e implementa programas completos de manutenção:
 
-Etapas do projeto:
+1. Análise de criticidade dos equipamentos
+2. Desenvolvimento de planos de manutenção preventiva
+3. Implementação de técnicas preditivas
+4. Monitoramento de condições em tempo real
+5. Gestão informatizada da manutenção
+6. Treinamento das equipes de manutenção`;
 
-1. Levantamento técnico e diagnóstico da necessidade
-2. Estudos de viabilidade e propostas de solução
-3. Projeto 3D completo em CAD (SolidWorks, Inventor ou similar)
-4. Desenvolvimento de sistemas mecânicos, pneumáticos e automatizados
-5. Fabricação, montagem e testes de validação
-6. Treinamento operacional e assistência técnica`;
-      
-      case 'Consultoria em Processos e Ferramentaria':
-        return `Na MAP3 – High Tech Mechanics, oferecemos consultoria especializada em processos industriais e ferramentaria com foco em melhoria contínua, inovação técnica e aumento da produtividade. Atuamos como parceiros estratégicos da indústria, promovendo soluções sob medida que otimizam operações e garantem ganhos reais em performance.
+      case 'Geometria de Máquinas':
+        return `Precisão e alinhamento para máximo desempenho
 
-O que fazemos:
+Na MAP3 – High Tech Mechanics, realizamos análises geométricas completas em máquinas industriais, garantindo precisão e qualidade em seus processos produtivos. Utilizamos equipamentos de última geração para medições e ajustes.
 
-Nosso serviço de consultoria é direcionado para empresas que desejam aprimorar seus processos produtivos e obter maior controle, precisão e rentabilidade em suas operações. Atuamos nas seguintes frentes:
+📏 Serviços especializados
 
-• Análise e otimização de processos industriais
-• Identificamos gargalos produtivos, implementamos metodologias LEAN, 5S e Kaizen
-• Desenvolvimento e manutenção de ferramentaria
-• Automação e digitalização de processos
-• Treinamento técnico e capacitação de equipes`;
+Nossa equipe realiza:
 
-      case 'Confecção de Carenagens':
-        return `Proteção, estética e funcionalidade com engenharia de precisão
+1. Medição de geometria com equipamentos laser
+2. Análise de perpendicularidade e paralelismo
+3. Verificação de planicidade e retilineidade
+4. Alinhamento de eixos e guias
+5. Correção de desvios geométricos
+6. Documentação técnica das medições`;
 
-Na MAP3 – High Tech Mechanics, somos especialistas na confecção de carenagens técnicas e industriais, desenvolvidas sob medida para máquinas, equipamentos e dispositivos. Nossas carenagens aliam segurança operacional, design funcional e acabamento de alto padrão.
+      case 'Reforma e Retrofiting de Máquinas CNC':
+        return `Modernização completa para maior produtividade
 
-O que entregamos:
+Na MAP3 – High Tech Mechanics, transformamos máquinas CNC antigas em equipamentos modernos e eficientes. Nossa expertise em retrofiting garante uma renovação completa, desde o comando até os componentes mecânicos.
 
-• Projeto técnico em 3D (CAD)
-• Fabricação sob medida
-• Acabamento e pintura profissional
-• Integração com máquinas e dispositivos
-• Instalação e montagem in loco
+🔄 Processo de modernização
 
-Aplicações comuns:
+Etapas do retrofiting:
 
-✔ Máquinas CNC
-✔ Linhas de montagem
-✔ Dispositivos automatizados
-✔ Equipamentos especiais
-✔ Proteções de segurança NR-12`;
+1. Avaliação técnica do equipamento
+2. Substituição do comando CNC
+3. Modernização de drives e motores
+4. Recuperação de guias e fusos
+5. Atualização do painel elétrico
+6. Implementação de recursos Indústria 4.0`;
+
+      case 'Recuperação de Componentes':
+        return `Restauração técnica com precisão industrial
+
+Na MAP3 – High Tech Mechanics, oferecemos serviços especializados de recuperação de componentes mecânicos, devolvendo suas características originais de funcionamento e prolongando sua vida útil.
+
+🛠️ Especialidades técnicas
+
+Recuperação especializada de:
+
+1. Fusos de esferas e castanhas
+2. Guias lineares e patins
+3. Eixos e acoplamentos
+4. Mancais e rolamentos
+5. Sistemas hidráulicos
+6. Componentes de precisão`;
+
+      case 'Desenho 3D e Detalhamento':
+        return `Projetos técnicos com alta precisão
+
+Na MAP3 – High Tech Mechanics, desenvolvemos projetos 3D completos e documentação técnica detalhada para fabricação de componentes e conjuntos mecânicos, utilizando as mais modernas ferramentas de CAD.
+
+💻 Desenvolvimento técnico
+
+Nossos serviços incluem:
+
+1. Modelagem 3D em SolidWorks/Inventor
+2. Desenhos técnicos detalhados
+3. Análise de interferências
+4. Simulações de movimento
+5. Documentação para fabricação
+6. Lista de materiais e especificações`;
+
+      case 'Montagem Industrial':
+        return `Execução técnica com excelência
+
+Na MAP3 – High Tech Mechanics, realizamos montagens industriais com alto padrão técnico, seguindo rigorosos procedimentos de qualidade e segurança, garantindo a máxima eficiência operacional.
+
+🏭 Serviços especializados
+
+Nossa atuação abrange:
+
+1. Montagem de máquinas e equipamentos
+2. Instalação de linhas de produção
+3. Alinhamento de precisão
+4. Instalações elétricas industriais
+5. Start-up e comissionamento
+6. Documentação técnica completa`;
 
       default:
         return `Mais informações sobre ${service} em breve.`;
