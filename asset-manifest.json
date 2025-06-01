@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MAP3-High-Tech/static/css/main.e74268ce.css",
+    "main.js": "/MAP3-High-Tech/static/js/main.7878f0f8.js",
+    "index.html": "/MAP3-High-Tech/index.html",
+    "main.e74268ce.css.map": "/MAP3-High-Tech/static/css/main.e74268ce.css.map",
+    "main.7878f0f8.js.map": "/MAP3-High-Tech/static/js/main.7878f0f8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e74268ce.css",
+    "static/js/main.7878f0f8.js"
+  ]
+}
